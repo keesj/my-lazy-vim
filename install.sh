@@ -14,9 +14,7 @@ fi
 if [ ! -e bin/nvim ]
 then
         rm -rf bin/nvim
-        rm -rf bin/vim
         ln -s ../opt/nvim-linux64/bin/nvim bin/nvim
-        ln -s bin/nvim bin/vim
 fi
 
 rm -rf ~/.config/nvim
