@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# curl -o- https://github.com/keesj/my-lazy-vim/keesj/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/keesj/my-lazy-vim/keesj/install.sh | bash
 rm -rf ~/opt/nvim-linux
 wget -qO- https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz | tar zxvf - -C ~/opt
 if ! grep -q '${HOME}/bin' ~/.bashrc
