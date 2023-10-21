@@ -8,4 +8,5 @@ return {
     -- disable the default flash keymap
     { "s", mode = { "n", "x", "o" }, false },
   },
+  { "mini.pairs", enabled = false },
 }
