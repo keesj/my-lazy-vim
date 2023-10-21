@@ -6,6 +6,4 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 # https://github.com/neovim/neovim/wiki/Installing-Neovim
 
-
-
-curl -o- https://github.com/keesj/my-lazy-vim/keesj/install.sh | bash
+curl -o- https://raw.githubusercontent.com/keesj/my-lazy-vim/keesj/install.sh | bash
