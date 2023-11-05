@@ -3,6 +3,13 @@
 # curl -o- https://raw.githubusercontent.com/keesj/my-lazy-vim/keesj/install.sh | bash
 
 # TODO: Add Check git / curl persent
+TOOLS="git tar"
+for i in $TOOLS; do
+	if ! type $i 1>/dev/null 2>/dev/null; then
+		echo MISSING TOOL $i
+                exit 1
+	fi
+done
 # TODO: Check for exising install (preffer git pull v.s. clone)
 # TODO: Diff before updating
 # TODO: Fail early in the script if it fails
@@ -24,15 +31,24 @@ if [ ! -e bin/nvim ]; then
 	ln -s ../opt/nvim-linux64/bin/nvim bin/nvim
 fi
 
-rm -rf ~/.config/nvim
+if [ -d ~/.config/nvim/.git ]; then
+	echo "GIT directory found"
+	(
+		cd ~/.config/nvim/
+		git pull
+	)
+else
+	echo "GIT directory NOT found"
+	rm -rf ~/.config/nvim/.git
+	git clone https://github.com/keesj/my-lazy-vim.git ~/.config/nvim
+fi
 # optional but recommended
 rm -rf ~/.local/share/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
 
-git clone https://github.com/keesj/my-lazy-vim.git ~/.config/nvim
 echo "## COPY / PASE in root shell"
 echo
 echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget
 echo python3 -mvenv .venv
-echo 'export PATH="${HOME}/.vent/bin:${PATH}"'
+echo 'export PATH="${HOME}/.venv/bin:${PATH}"'
