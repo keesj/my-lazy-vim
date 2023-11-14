@@ -3,11 +3,11 @@
 # curl -o- https://raw.githubusercontent.com/keesj/my-lazy-vim/keesj/install.sh | bash
 
 # TODO: Add Check git / curl persent
-TOOLS="git tar"
+TOOLS="git tar wget"
 for i in $TOOLS; do
 	if ! type $i 1>/dev/null 2>/dev/null; then
 		echo MISSING TOOL $i
-                exit 1
+		exit 1
 	fi
 done
 # TODO: Check for exising install (preffer git pull v.s. clone)
@@ -22,6 +22,7 @@ rm -rf ~/opt/nvim-linux
 wget -qO- https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz | tar zxvf - -C ~/opt
 if ! grep -q '${HOME}/bin' ~/.bashrc; then
 	echo 'export PATH="${HOME}/bin:${PATH}"' >>~/.bashrc
+	echo 'alias vim="nvim"' >>~/.bashrc
 fi
 if [ ! -d bin ]; then
 	mkdir bin
@@ -49,6 +50,6 @@ rm -rf ~/.cache/nvim
 
 echo "## COPY / PASE in root shell"
 echo
-echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget
+echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget git okular
 echo python3 -mvenv .venv
 echo 'export PATH="${HOME}/.venv/bin:${PATH}"'
