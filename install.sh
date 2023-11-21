@@ -50,6 +50,6 @@ rm -rf ~/.cache/nvim
 
 echo "## COPY / PASE in root shell"
 echo
-echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget git okular
+echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget git okular feh
 echo python3 -mvenv .venv
 echo 'export PATH="${HOME}/.venv/bin:${PATH}"'
