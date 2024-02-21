@@ -63,3 +63,4 @@ echo
 echo sudo apt-get install tmux ripgrep moreutils build-essential silversearcher-ag python3-venv curl wget git okular feh
 echo python3 -mvenv .venv
 echo 'export PATH="${HOME}/.venv/bin:${PATH}"'
+echo export OLLAMA_HOST="localhost:11434"
