@@ -46,4 +46,4 @@ require("lazy").setup({
   },
 })
 
-require("devcontainer").setup({})
+--require("devcontainer").setup({})
