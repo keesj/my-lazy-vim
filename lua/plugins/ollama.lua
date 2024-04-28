@@ -35,7 +35,7 @@ return {
     -- your configuration overrides
     --        prompt = "Rewrite as Riscure security analyst: ceives $input and $sel(ection), among others.",
     prompts = {
-      AA_Rewrite_Prof_Long = {
+      AA_Mixtral_Rewrite_Prof_Long = {
         prompt = "Rewrite the following text to make it look more professional:\n\n $sel",
         input_label = "> ",
         model = "mixtral",
@@ -45,12 +45,6 @@ return {
         prompt = "Any obvious security issues in the following code? keep it short:\n\n $sel",
         input_label = "> ",
         model = "mistral",
-        action = "display",
-      },
-      AA_MistralFuzz = {
-        prompt = "Create a lib fuzzer fuzzing harness for the following code:\n\n $sel",
-        input_label = "> ",
-        model = "mixtral",
         action = "display",
       },
       --      MixtralFuzz = {
