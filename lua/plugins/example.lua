@@ -148,7 +148,6 @@ return {
         "markdown",
         "markdown_inline",
         "python",
-        "query",
         "regex",
         "tsx",
         "typescript",
