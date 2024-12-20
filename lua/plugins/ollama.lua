@@ -28,13 +28,33 @@ return {
   ---@type Ollama.Config
   opts = {
     model = "mixtral",
-    --url = "http://10.0.3.1:11435",
+    url = "http://0.0.0.0:11434",
     --model = "codellama",
     --model = "codellama:7b-code-q4_0",
     --model = "keesj",
     -- your configuration overrides
     --        prompt = "Rewrite as Riscure security analyst: ceives $input and $sel(ection), among others.",
     prompts = {
+      AAA_Riscure = {
+        prompt = ""
+          .. "\n- The user will provide you with the content of a file. "
+          .. "\n- You will correct the English in the comments, but leave everything else unchanged. "
+          .. "\n- Only modify comments if there is a spelling or grammar mistake. "
+          .. "\n- Make sure not to change the code, except for typos within strings."
+          .. "\n- Do not change the code itself, only comments."
+          .. "\n```"
+          .. "$sel"
+          .. "\n```",
+        input_label = "> ",
+        model = "llama3.2:1b",
+        action = "display",
+      },
+      AA_quen = {
+        prompt = "$sel",
+        input_label = "> ",
+        model = "qwen2.5-coder:7b",
+        action = "display",
+      },
       AA_Mixtral_Rewrite_Prof_Long = {
         prompt = "Rewrite the following text to make it look more professional:\n\n $sel",
         input_label = "> ",
