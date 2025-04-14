@@ -20,7 +20,7 @@ done
 mkdir -p opt
 if uname -m | grep "x86_64" 2>&1 >/dev/null; then
   rm -rf ~/opt/nvim-linux
-  wget -qO- https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz | tar zxvf - -C ~/opt
+  wget -qO- https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz | tar zxvf - -C ~/opt
 else
   echo "Skip nvim install"
   echo https://github.com/neovim/neovim
